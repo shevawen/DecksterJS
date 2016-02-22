@@ -7,7 +7,7 @@
     };
   }
 
-  function getInternetExplorerVersion () {
+  window.getInternetExplorerVersion = function () {
     var rv = -1; // Return value assumes failure.
     if (navigator.appName == 'Microsoft Internet Explorer')
     {
@@ -159,7 +159,7 @@
   // Shortcut function for checking if an object has a given property directly
   // on itself (in other words, not on a prototype).
   var has = function(obj, key) {
-    return obj != null && hasOwnProperty.call(obj, key);
+    return obj != null && Object.prototype.hasOwnProperty.call(obj, key);
   };
 
   // Is a given variable an object?
